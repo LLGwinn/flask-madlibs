@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs!{% endblock %}
+
+{% block content %}
+<h1>Welcome to Madlibs!</h1>
+<div class='regular'>
+    <label for='story_list'>Choose a story:</label>
+    <form action='/inputs' name='story_list'>
+        <select name='story_select'>
+            {% for story in stories %}
+            <option value='{{story.topic}}'>{{story.title}}</option>
+            {% endfor %}
+        </select>
+        <button>Submit</button>
+    </form>
+    
+</div>
+
+{% endblock %}

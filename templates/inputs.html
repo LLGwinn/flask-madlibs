@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Madlibs!{% endblock %}
+
+{% block content%}
+
+    <h1>Enter your response to create a story:</h1>
+
+    <form action='/story' name='story_prompts'>
+        {% for prompt in prompts %}
+        <div class='regular'>
+            <label for='{{prompt}}'>{{prompt}}: </label>
+            <input type='text' name='{{prompt}}'>
+        </div>
+        {% endfor %}
+        <input type='hidden' name='story_select' value='{{story_select}}'>
+        <div class='regular'>
+            <button>Submit</button>
+        </div>
+        
+    </form>   
+
+{% endblock %}
